@@ -1,2 +1,4 @@
-# node-exibitions
-node.js learining repository
+# CONDITIO APP
+
+## ROADMAP
+* establish HTTPS API
