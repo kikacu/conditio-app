@@ -1,0 +1,33 @@
+{
+  "name": "conditio-app",
+  "version": "1.0.0",
+  "description": "conditio web app",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "npm run build && node ./out/app.js",
+    "build": "tsc --pretty"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kikacu/conditio-app.git"
+  },
+  "keywords": [
+    "conditio",
+    "https",
+    "API"
+  ],
+  "author": "Stefan Kikic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kikacu/conditio-app/issues"
+  },
+  "homepage": "https://github.com/kikacu/conditio-app#readme",
+  "dependencies": {
+    "mongoose": "^5.9.6"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.7.8",
+    "@types/node": "^13.9.5",
+    "typescript": "^3.8.3"
+  }
+}
