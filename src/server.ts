@@ -8,7 +8,7 @@ export class Server {
   ) {
     this.port = env.getPort();
   }
-  
+
   public async start(): Promise<void> {
     return new Promise((resolve, reject) => {
       const app: express.Application = this.expressApp;
