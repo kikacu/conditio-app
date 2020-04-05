@@ -1,5 +1,5 @@
 import express from "express";
-import { Server } from "./server";
+import { Server } from "./http/server";
 
 const server = new Server(process, express());
 server.start();

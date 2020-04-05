@@ -1,12 +1,17 @@
 import express, { Request, Response, NextFunction } from "express";
-import * as env from "./environemnt";
+import * as env from "../environemnt";
+import { Logger } from "../common/logger";
+import messages from "../locale/message.json";
+
 export class Server {
   private readonly port: number;
+  private logger: Logger;
   constructor(
     process: NodeJS.Process,
     private readonly expressApp: express.Application
   ) {
     this.port = env.getPort(process);
+    this.logger = new Logger("Server");
   }
 
   public async start(): Promise<void> {
@@ -23,7 +28,7 @@ export class Server {
       });
 
       app.get("/", (req: Request, res: Response) => {
-        res.send("CondITio App is running !!!!");
+        res.send(JSON.parse(messages.msg_App_Running));
       });
 
       this.registerRoutes();
@@ -33,7 +38,7 @@ export class Server {
       this.handle500Error();
 
       app.listen(this.port, () => {
-        console.log(`CondITio App is started on port ${this.port}`);
+        this.logger.info(messages.msg_App_Running);
         resolve();
       });
     });

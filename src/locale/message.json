@@ -1,0 +1,4 @@
+{
+  "msg_App_Running": "{\"msg\" : \"CondITio App is running.\"}",
+  "msg_Mongo_Connected": "{\"msg\" : \"CondITio App connected Mongo database.\"}"
+}
