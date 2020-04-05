@@ -22,7 +22,7 @@ export class Server {
         next();
       });
 
-      app.get("/health", (req: Request, res: Response) => {
+      app.get("/", (req: Request, res: Response) => {
         res.send("CondITio App is running !!!!");
       });
 
