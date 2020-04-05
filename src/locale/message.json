@@ -1,4 +1,6 @@
 {
   "msg_App_Running": "{\"msg\" : \"CondITio App is running.\"}",
-  "msg_Mongo_Connected": "{\"msg\" : \"CondITio App connected Mongo database.\"}"
+  "msg_Mongo_Connected": "{\"msg\" : \"CondITio App connected Mongo database.\"}",
+  "msg_Mongo_Connection_Unavailable": "{\"msg\" : \"Mongo database connection is not available.\"}",
+  "msg_Mongo_Collection_Created": "{\"msg\" : \"Mongo database collection is created.\"}"
 }
