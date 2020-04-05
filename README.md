@@ -1,4 +1,4 @@
 # CONDITIO APP
-[![Build Status](https://travis-ci.org/github/kikacu/conditio-app?branch=master)](https://conditio-app.herokuapp.com/)
+[![Build Status](https://travis-ci.org/kikacu/conditio-app.svg?branch=master)](https://travis-ci.org/kikacu/conditio-app)
 ## ROADMAP
 * establish HTTPS API
