@@ -6,7 +6,7 @@ export class Server {
     process: NodeJS.Process,
     private readonly expressApp: express.Application
   ) {
-    this.port = env.getPort();
+    this.port = env.getPort(process);
   }
 
   public async start(): Promise<void> {
