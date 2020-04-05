@@ -4,7 +4,8 @@
   "description": "conditio web app",
   "main": "src/app.ts",
   "scripts": {
-    "start": "npm run build && node ./out/app.js",
+    "start": "npm run build && npm run serve",
+    "serve": "node ./out/app.js",
     "build": "tsc --pretty",
     "lint": "eslint src/*.ts"
   },
@@ -25,7 +26,8 @@
   "homepage": "https://github.com/kikacu/conditio-app#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.9.6"
+    "mongoose": "^5.9.6",
+    "typescript": "^3.8.3"
   },
   "devDependencies": {
     "@types/express": "^4.17.4",
@@ -33,7 +35,6 @@
     "@types/node": "^13.11.0",
     "eslint": "^6.8.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-sonarjs": "^0.5.0",
-    "typescript": "^3.8.3"
+    "eslint-plugin-sonarjs": "^0.5.0"
   }
 }
