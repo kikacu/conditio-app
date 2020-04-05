@@ -1,1 +1,1 @@
-web: ./node_modules/.bin/tsc --module commonjs --outDir out/ --noImplicitAny --sourceMap --target ES2018 app.ts && node out/app.js
+web: npm run start
