@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response, NextFunction } from "express";
 import * as env from "./environemnt";
 export class Server {
   private readonly port: number;
@@ -10,10 +10,10 @@ export class Server {
   }
 
   public async start(): Promise<void> {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve: any, reject: any) => {
       const app: express.Application = this.expressApp;
 
-      app.use((req, res, next) => {
+      app.use((req: Request, res: Response, next: NextFunction) => {
         res.header("Access-Control-Allow-Origin", "*");
         res.header(
           "Access-Control-Allow-Headers",
@@ -22,7 +22,7 @@ export class Server {
         next();
       });
 
-      app.get("/", (req, res) => {
+      app.get("/", (req: Request, res: Response) => {
         res.send("CondITio App is running !!!!");
       });
 
@@ -44,20 +44,22 @@ export class Server {
 
   private handle404Error(): void {
     // Handle 404
-    this.expressApp.use((req, res) => {
+    this.expressApp.use((req: Request, res: Response) => {
       res.status(404).send("404: Page not found");
     });
   }
 
   private handle500Error(): void {
     // Handle 500
-    this.expressApp.use((error: any, req: any, res: any, next: any) => {
-      const response: any = {
-        message:
-          (error && error.message) || "500: Internal Server Error occured!",
-        stack: (error && error.stack) || "",
-      };
-      res.status(500).send(response);
-    });
+    this.expressApp.use(
+      (error: any, req: Request, res: Response, next: NextFunction) => {
+        const response: any = {
+          message:
+            (error && error.message) || "500: Internal Server Error occured!",
+          stack: (error && error.stack) || "",
+        };
+        res.status(500).send(response);
+      }
+    );
   }
 }
